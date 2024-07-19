@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-right: auto;
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.nav-toggle .hamburger {
+    display: block;
+    width: 2rem;
+    height: 2px;
+    background: #fff;
+    position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: '';
+    width: 2rem;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle .hamburger::before {
+    top: -0.5rem;
+}
+
+.nav-toggle .hamburger::after {
+    top: 0.5rem;
+}
+
+.nav-open .nav-toggle .hamburger {
+    background: transparent;
+}
+
+.nav-open .nav-toggle .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-open .nav-toggle .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        background: #333;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-open nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #444;
+    }
+
+    nav ul li a:hover {
+        background: #444;
+    }
+}
